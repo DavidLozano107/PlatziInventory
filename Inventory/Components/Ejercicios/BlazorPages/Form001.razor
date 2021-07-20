@@ -1,0 +1,55 @@
+﻿<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Formulario</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<form @onsubmit="ChangeText">
+				<div class="mb-3">
+					<label for="exampleInputEmail1" class="form-label">Texto 1</label>
+					<input type="text" class="form-control" @bind-value="Valor1">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputPassword1" class="form-label">Texto 2</label>
+					<input type="text" class="form-control" id="exampleInputPassword1" @bind-value="Valor2">
+				</div>
+				<div class="mb-3">
+					<label for="exampleInputPassword1" class="form-label">Texto 3</label>
+					<input type="text" class="form-control" id="exampleInputPassword1" @bind-value="Valor3">
+				</div>
+				<button type="submit" class="btn btn-primary">Show Texts</button>
+			</form>
+
+			<hr />
+
+			@if (MostrarTexto)
+			{
+				<p>@Valor1</p>
+				<p>@Valor2</p>
+				<p>@Valor3</p>
+			}
+
+		</div>
+	</div>
+
+
+
+</div>
+
+@code{
+	public string Valor1 { get; set; }
+	public string Valor2 { get; set; }
+	public string Valor3 { get; set; }
+
+
+	public bool MostrarTexto { get; set; } = false;
+
+	private void ChangeText()
+	{
+		MostrarTexto = true;
+	}
+
+
+}
