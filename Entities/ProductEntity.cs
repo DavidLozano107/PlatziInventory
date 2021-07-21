@@ -8,7 +8,7 @@ namespace Entities
 	{
 		[Key]
 		[StringLength(10)]
-		public int ProductId { get; set; }
+		public string ProductId { get; set; }
 
 		[Required]
 		[StringLength(100)]
